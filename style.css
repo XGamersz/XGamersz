@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
   transition: 0.4s all;
   font-family: "Montserrat", sans-serif !important;
+  color: var(--secondary);
 }
 
 .isSticky {
@@ -173,6 +174,55 @@ body {
 }
 .banner-content .banner-right .character-image {
   transform: scale(0.8);
+}
+
+.privacy-policy {
+  padding: 48px 0;
+  background-color: #000;
+}
+.privacy-policy-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.privacy-policy-content h2 {
+  font-weight: 700;
+  font-size: 54px;
+  margin-bottom: 54px;
+  color: var(--primary);
+}
+.privacy-policy-content h3 {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--primary);
+}
+.privacy-policy-content p {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.privacy-policy .contact-us {
+  margin-top: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.privacy-policy .contact-us .logo {
+  width: 200px;
+  margin-right: 90px;
+}
+.privacy-policy .contact-us .info span {
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  color: var(--primary);
+}
+.privacy-policy .contact-us .info a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+.privacy-policy .contact-us .info a:hover {
+  opacity: 0.7;
 }
 
 @keyframes bannerLoaderAnimation {
