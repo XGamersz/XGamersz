@@ -7,6 +7,7 @@ body {
 	overflow-x: hidden;
 	transition: 0.4s all;
 	font-family: 'Montserrat', sans-serif !important;
+	color: var(--secondary);
 }
 
 .isSticky {
@@ -31,18 +32,12 @@ body {
 
 .banner {
 	position: relative;
-	background-image: url(assets/banner-2.jpeg);
-	background-repeat: no-repeat;
-	background-size: cover;
+	// background-image: url(assets/banner-2.jpeg);
+	// background-repeat: no-repeat;
+	// background-size: cover;
 	height: 90vh;
 	width: 100%;
-	&::before {
-		content: '';
-		position: absolute;
-		background-color: rgba($color: #000000, $alpha: 0.7);
-		height: 100%;
-		width: 100%;
-	}
+	
 	.header {
 		width: 100%;
 		padding: 0 230px;
@@ -122,51 +117,136 @@ body {
 			}
 		}
 	}
-	&-content {
-		position: relative;
-		display: flex;
-		height: 100%;
-		align-items: center;
-		.banner-bg-loader {
+	.swiper {
+		.banner-image {
+			width: 100%;
+			height: 100%;
 			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%) scale(0.9);
-			opacity: .2;
-			animation: bannerLoaderAnimation 60s infinite;
-		}
-		.banner-left {
-			flex: 0 0 50%;flex-direction: column;
-			display: flex;
-			justify-content: center;
-			margin-left: 250px;
-			position: relative;
-			h2 {
-				color: var(--primary);
-				font-size: 22px;
-				margin-bottom: 15px;
-				font-weight: 700;
-			}
-			h3 {
-				font-size: 90px;
-				margin-bottom: 12px;
-				color: #fff;
-				font-weight: 700;
-				span {
-					color: var(--primary);
+			transform: scaleX(-1);
+			.dark-layer {
+				&::before {
+					content: '';
+					position: absolute;
+					background-color: rgba($color: #000000, $alpha: 0.7);
+					height: 100%;
+					width: 100%;
 				}
 			}
-			p {
-				font-size: 16px;
-				color: #fff;
-				max-width: 430px;
-				margin-bottom: 48px;
+			img {
+				width: 100%;
 			}
 		}
-		.banner-right {
-			flex: 1;
-			.character-image {
-				transform: scale(.8);
+		.banner-content {
+			position: relative;
+			display: flex;
+			height: 100%;
+			align-items: center;
+			.banner-bg-loader {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) scale(0.9);
+				opacity: .2;
+				animation: bannerLoaderAnimation 60s infinite;
+			}
+			.banner-left {
+				flex: 0 0 50%;flex-direction: column;
+				display: flex;
+				justify-content: center;
+				margin-left: 250px;
+				position: relative;
+				h2 {
+					color: var(--primary);
+					font-size: 22px;
+					margin-bottom: 15px;
+					font-weight: 700;
+				}
+				h3 {
+					font-size: 90px;
+					margin-bottom: 12px;
+					color: #fff;
+					font-weight: 700;
+					span {
+						color: var(--primary);
+					}
+				}
+				p {
+					font-size: 16px;
+					color: #fff;
+					max-width: 430px;
+					margin-bottom: 48px;
+				}
+			}
+			.banner-right {
+				flex: 1;
+				.character-image {
+					transform: scale(.8);
+					&.santa-clause {
+						transform: scale(.6);
+						img {
+							transform: scaleX(-1);
+						}
+					}
+					&.racer-img {
+						position: relative;
+						transform: scale(1.2);
+						left: -15%;
+					}
+					img {
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.privacy-policy {
+	padding: 48px 0;
+	background-color: #000;
+	&-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		h2 {
+			font-weight: 700;
+			font-size: 54px;
+			margin-bottom: 54px;
+			color: var(--primary);
+		}
+		h3 {
+			font-weight: 700;
+			font-size: 32px;
+			color: var(--primary);
+		}
+		p {
+			color: #fff;
+			font-weight: 500;
+			margin-bottom: 16px;
+		}
+	}
+	.contact-us {
+		margin-top: 54px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.logo {
+			width: 200px;
+			margin-right: 90px;
+		}
+		.info {
+			span {
+				color: #fff;
+				font-size: 18px;
+				display: block;
+				color: var(--primary);
+			}
+			a {
+				text-decoration: none;
+				color: #fff;
+				font-size: 18px;
+				&:hover {
+					opacity: .7;
+				}
 			}
 		}
 	}
